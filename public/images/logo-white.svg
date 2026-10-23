@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80" fill="none">
+  <!-- Symbol: Cross & Fountain -->
+  <g transform="translate(10, 8)">
+    <circle cx="32" cy="32" r="30" fill="rgba(255,255,255,0.08)" stroke="#4ade80" stroke-width="2"/>
+    <!-- Cross -->
+    <path d="M32 14 V48" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M22 25 H42" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Fountain Arcs -->
+    <path d="M18 42 C22 36, 26 36, 32 40 C38 36, 42 36, 46 42" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M14 47 C20 42, 26 42, 32 45 C38 42, 44 42, 50 47" stroke="#4ade80" stroke-width="2" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Text -->
+  <text x="88" y="38" font-family="'Lora', 'Georgia', serif" font-size="24" font-weight="700" fill="#FFFFFF" letter-spacing="0.5">
+    FAITH FOUNTAIN
+  </text>
+  <text x="89" y="58" font-family="'Lato', 'Open Sans', sans-serif" font-size="12" font-weight="600" fill="#4ade80" letter-spacing="3.5">
+    FOUNDATION
+  </text>
+</svg>

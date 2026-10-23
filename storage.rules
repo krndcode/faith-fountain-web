@@ -1,0 +1,29 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    function isAdmin() {
+      return request.auth != null;
+    }
+    
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    function isUnder5MB() {
+      return request.resource.size < 5 * 1024 * 1024;
+    }
+
+    // Public website media (photos, logos, program images)
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin() && isImage() && isUnder5MB();
+    }
+
+    // Story and program uploads
+    match /uploads/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin() && isImage() && isUnder5MB();
+    }
+  }
+}
