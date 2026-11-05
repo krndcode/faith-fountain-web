@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAdminAuth } from "@/context/AdminAuthContext";
+import { BrandLogo } from "@/components/common/BrandLogo";
 import {
   Lock,
   Mail,
@@ -56,15 +56,7 @@ export default function AdminLoginPage() {
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10 px-4">
         <div className="flex justify-center mb-6">
-          <Link href="/">
-            <Image
-              src="/images/logo-white.svg"
-              alt="Faith Fountain Foundation"
-              width={240}
-              height={55}
-              className="h-12 w-auto"
-            />
-          </Link>
+          <BrandLogo variant="footer" href="/" />
         </div>
 
         <div className="bg-white py-8 px-6 shadow-elevated rounded-2xl sm:px-10 border border-brand-border">

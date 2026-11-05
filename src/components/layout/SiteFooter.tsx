@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { initialPrograms } from "@/config/initial-programs";
+import { BrandLogo } from "../common/BrandLogo";
 import {
   Mail,
   Phone,
@@ -22,16 +22,8 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Column 1: Organization & Motto */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block">
-              <Image
-                src="/images/logo-white.svg"
-                alt="Faith Fountain Foundation"
-                width={240}
-                height={55}
-                className="h-12 w-auto"
-              />
-            </Link>
-            <p className="font-serif italic text-emerald-300 text-sm font-medium">
+            <BrandLogo variant="footer" href="/" />
+            <p className="font-serif italic text-emerald-300 text-sm font-medium pt-1">
               &ldquo;{siteConfig.motto}&rdquo;
             </p>
             <p className="text-white/80 text-sm leading-relaxed font-sans">
@@ -181,13 +173,7 @@ export function SiteFooter() {
               <ShieldCheck className="w-3.5 h-3.5" />
               Privacy Policy
             </Link>
-            <Link
-              href="/admin/login"
-              className="hover:text-emerald-300 transition-colors flex items-center gap-1 text-white/50"
-            >
-              <Lock className="w-3 h-3" />
-              Admin Portal
-            </Link>
+           
           </div>
         </div>
       </div>

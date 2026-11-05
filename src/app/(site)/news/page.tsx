@@ -5,6 +5,7 @@ import { PageHero } from "@/components/common/PageHero";
 import { StoryCard } from "@/components/news/StoryCard";
 import { EmptyState } from "@/components/common/States";
 import { CallToAction } from "@/components/common/CallToAction";
+import { StaggerContainer, StaggerItem } from "@/components/motion/MotionWrapper";
 
 export const metadata: Metadata = {
   title: "News and Stories | Field Reports & Updates",
@@ -36,11 +37,13 @@ export default async function NewsPage() {
               actionLabel="Return to Homepage"
             />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {stories.map((story) => (
-                <StoryCard key={story.id} story={story} />
+                <StaggerItem key={story.id}>
+                  <StoryCard story={story} />
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           )}
         </div>
       </section>

@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAdminAuth } from "@/context/AdminAuthContext";
+import { BrandLogo } from "../common/BrandLogo";
 import {
   LayoutDashboard,
   FileText,
@@ -38,15 +38,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
     <aside className="w-64 bg-brand-forest text-white flex flex-col h-full border-r border-brand-growth/20">
       {/* Brand Header */}
       <div className="p-5 border-b border-white/10 flex items-center justify-between">
-        <Link href="/admin" className="flex items-center gap-2">
-          <Image
-            src="/images/logo-white.svg"
-            alt="Faith Fountain Admin"
-            width={180}
-            height={40}
-            className="h-8 w-auto"
-          />
-        </Link>
+        <BrandLogo variant="admin" href="/admin" />
       </div>
 
       {isDemoSession && (

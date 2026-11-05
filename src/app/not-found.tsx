@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { PrimaryButton } from "@/components/common/PrimaryButton";
 import { SecondaryButton } from "@/components/common/SecondaryButton";
+import { BrandLogo } from "@/components/common/BrandLogo";
 import { Home, Compass, MessageSquare } from "lucide-react";
 
 export default function NotFound() {
@@ -10,13 +10,7 @@ export default function NotFound() {
     <div className="min-h-screen flex flex-col justify-center items-center bg-brand-ivory/50 px-4 py-16 text-center">
       <div className="max-w-md mx-auto space-y-6">
         <div className="flex justify-center">
-          <Image
-            src="/images/logo.svg"
-            alt="Faith Fountain Foundation"
-            width={240}
-            height={55}
-            className="h-12 w-auto"
-          />
+          <BrandLogo variant="header" href="/" />
         </div>
 
         <div className="w-16 h-16 rounded-full bg-brand-forest text-emerald-300 flex items-center justify-center mx-auto shadow-soft">

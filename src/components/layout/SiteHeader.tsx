@@ -2,11 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { PrimaryButton } from "../common/PrimaryButton";
 import { MobileNavigation } from "./MobileNavigation";
+import { BrandLogo } from "../common/BrandLogo";
 import { Heart, Mail, Phone, MapPin } from "lucide-react";
 
 export function SiteHeader() {
@@ -53,19 +53,7 @@ export function SiteHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-growth rounded-sm"
-          >
-            <Image
-              src="/images/logo.svg"
-              alt="Faith Fountain Foundation"
-              width={240}
-              height={55}
-              className="h-12 w-auto"
-              priority
-            />
-          </Link>
+          <BrandLogo variant="header" href="/" />
 
           {/* Desktop Navigation Links */}
           <nav
@@ -80,7 +68,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-growth ${
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-growth ${
                     isActive
                       ? "text-brand-growth font-semibold bg-brand-growth-soft"
                       : "text-brand-forest hover:text-brand-growth hover:bg-brand-ivory"

@@ -5,6 +5,11 @@ import { PageHero } from "@/components/common/PageHero";
 import { ProgramCard } from "@/components/programs/ProgramCard";
 import { CallToAction } from "@/components/common/CallToAction";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/motion/MotionWrapper";
 
 export const metadata: Metadata = {
   title: "Our Programs | Education, Community, Children & Gospel Outreach",
@@ -26,18 +31,22 @@ export default async function ProgramsPage() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            tagline="Christian Service in Action"
-            title="Meeting Needs, Sharing Hope"
-            subtitle="Each program addresses verified challenges faced by vulnerable children, families, and communities in Ghana."
-            className="mb-14"
-          />
+          <FadeIn direction="up">
+            <SectionHeading
+              tagline="Christian Service in Action"
+              title="Meeting Needs, Sharing Hope"
+              subtitle="Each program addresses verified challenges faced by vulnerable children, families, and communities in Ghana."
+              className="mb-14"
+            />
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((program) => (
-              <ProgramCard key={program.id} program={program} />
+              <StaggerItem key={program.id}>
+                <ProgramCard program={program} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 

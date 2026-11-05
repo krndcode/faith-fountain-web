@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/images/hero-community.svg",
-        width: 1200,
-        height: 700,
+        url: "/images/hero.png",
+        width: 1366,
+        height: 768,
         alt: siteConfig.name,
       },
     ],
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.motto}`,
     description: siteConfig.description,
-    images: ["/images/hero-community.svg"],
+    images: ["/images/hero.png"],
   },
   robots: {
     index: true,

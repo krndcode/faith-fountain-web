@@ -5,8 +5,6 @@ import { getAdminFirestore } from "./admin";
 
 /**
  * Fetch all published stories sorted by publication date descending.
- * Uses Firebase Admin Firestore if configured, otherwise falls back gracefully
- * to initial verified foundation activity stories.
  */
 export async function getPublishedStories(): Promise<Story[]> {
   try {
@@ -29,7 +27,6 @@ export async function getPublishedStories(): Promise<Story[]> {
     console.warn("Could not retrieve stories from Firestore, using initial dataset:", error);
   }
 
-  // Graceful fallback to verified stories
   return initialStories.filter((s) => s.published);
 }
 
@@ -147,7 +144,6 @@ export async function saveDonationToFirestore(
   }
 
   try {
-    // Check for duplicate capture ID
     const existing = await firestore
       .collection("donations")
       .where("paypalCaptureId", "==", donation.paypalCaptureId)
